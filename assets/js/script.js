@@ -21,11 +21,12 @@ var generatePassword = function() {
     return generatePassword();
   }
 
-  // for loop to generate new character each time, totaling the length of the password
+  // for loop to generate new character each time and add it to the password, totaling the length of the password
   for (i = 0; i < passwordLength; i++) {
   // choose a random character array. If array is not supposed to be used, do not use it and try again
   var chooseArray = function() {
     var chosenArray = Math.floor(Math.random() * 4);
+    console.log(chosenArray);
     if (chosenArray === 0 && upperCaseConfirm == true) {
       return upperCaseAr;
     }
@@ -50,7 +51,7 @@ var generatePassword = function() {
   }
 
   password = password + addChar(chooseArray());
-
+  console.log(password);
   }
   return password
 }
@@ -58,7 +59,7 @@ var generatePassword = function() {
 
 var upperCaseAr =  ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var lowerCaseAr =  ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-var numberAr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var numberAr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialAr = ['!', '\"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', "/", ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', "`", "{", '|', "}", "~"];
 
 
