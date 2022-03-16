@@ -45,7 +45,7 @@ var generatePassword = function() {
 
   // for loop to generate new character each time and add it to the password, totaling the length of the password
   for (var i = 0; i < passwordLength; i++) {
-  //finding a random character to add from the chosen array
+  //finding a random character to add from the character array
   var addChar = function() {
     var randomIndex = Math.floor(Math.random() * characterArray.length);
     var charToAdd = characterArray[randomIndex];
@@ -58,8 +58,6 @@ var generatePassword = function() {
   return password;
 }
 
-
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -69,7 +67,5 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
+// Add event listener to generate password button
 generateBtn.addEventListener("click", writePassword);
-
-
