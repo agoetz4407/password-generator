@@ -18,7 +18,7 @@ var generatePassword = function() {
     alert("Not a valid password length. Please enter a number between 8 and 128");
     return generatePassword();
   }
-  //promting user to choose which types of characters they would like to use
+  //promting user to choose which types of characters they would like to use and adding those characters to new array
   var upperCaseConfirm = confirm("Would you like your password to have UPPER CASE letters in it? Select OK for yes or CANCEL for no.");
   if (upperCaseConfirm) {
     characterArray = characterArray.concat(upperCaseAr);
@@ -45,14 +45,14 @@ var generatePassword = function() {
 
   // for loop to generate new character each time and add it to the password, totaling the length of the password
   for (var i = 0; i < passwordLength; i++) {
-  //finding a random character to add from the character array
-  var addChar = function() {
-    var randomIndex = Math.floor(Math.random() * characterArray.length);
-    var charToAdd = characterArray[randomIndex];
-    return charToAdd
-  }
-  //adding the random character to the password
-  password = password + addChar();
+    //finding a random character to add from the character array
+    var addChar = function() {
+      var randomIndex = Math.floor(Math.random() * characterArray.length);
+      var charToAdd = characterArray[randomIndex];
+      return charToAdd
+    }
+    //adding the random character to the password
+    password = password + addChar();
   }
   //returning password value
   return password;
